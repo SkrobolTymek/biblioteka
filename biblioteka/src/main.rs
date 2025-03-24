@@ -14,6 +14,10 @@ fn main(){
     // let mut contents = String::new();
     // file.expect("REASON").read_to_string(&mut contents);
     // println!("File Contents:\n{}", contents);
+    let mut books: Vec<Book> = Vec::new();
+
+
+    books.push(Book{title: poem, content: "poem.txt".to_string(), id: 1});
 
     loop{
     println!("CHOOSE AN OPTION: ");
@@ -27,7 +31,11 @@ fn main(){
     let choice = choice.trim();
     match choice{
         "1"=>{
-            
+            println!("Ksiazka {}", book.title);
+            let mut file = File::open("{}", book.content);
+            let mut contentsfile = String::new();
+            file.expect("REASON").read_to_string(&mut contentsfile);
+            println!("File Contents:\n{}", contentsfile);
         }
         "2"=>{
 
